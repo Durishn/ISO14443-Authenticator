@@ -7,7 +7,7 @@ from subprocess import Popen, PIPE
 from config import Config
 
 # Logging  
-logfile = open("/Users/nicdurish/Code/Running/nfc-unlock/log.txt","a")
+logfile = open("log.txt","a")
 
 #Set serial input
 ser = serial.Serial(port=Config.PORT, baudrate=Config.BAUDRATE, timeout=1)
