@@ -6,7 +6,7 @@ import time
 from subprocess import Popen, PIPE
 from config import Config
 
-# Logging  
+# Logging
 logfile = open("log.txt","a")
 
 #Set serial input
@@ -20,7 +20,7 @@ scpt = '''
 				quit
 			end tell
 			delay 0.1
- 		else 
+ 		else
 		tell application "Terminal"
 			do shell script "caffeinate -u -t 1"
 			end tell
@@ -62,13 +62,13 @@ while 1:
 		for x in Config.VALID_UIDS:
 			if x in arduinoData:
 				validKey = True
-				outputStr = "VALID LOGIN: \n\tTIME - "+datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')+"\n\tKEY_TYPE - "+tagType+"\n\tKEY_UID - "+arduinoData[:5]+"*****\n"
+				outputStr = "VALID LOGIN: \n\tTIME - " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')+"\n\tKEY_TYPE - "+tagType+"\n\tKEY_UID - "+arduinoData[:5]+"*****\n"
 				print(outputStr)
 				logfile.write(outputStr+"\n")
 				unlock_mac()
 
 		if validKey == False:
-			outputStr = "INVALID ATTEMPT: \n\tTIME - "+datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')+"\n\tKEY_TYPE - "+tagType+"\n\tKEY_UID - "+arduinoData
+			outputStr = "INVALID ATTEMPT: \n\tTIME - " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')+"\n\tKEY_TYPE - "+tagType+"\n\tKEY_UID - "+arduinoData
 			print(outputStr)
 			logfile.write(outputStr+"\n")
 
