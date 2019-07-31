@@ -15,7 +15,8 @@ Instructions
 1. Plug your PN532 into your Arduino Uno
 2. Run `bash findtty.sh` & wait until the program prompts you to plug in your Arduino (this little script is courtesy of [Jerry Davis](https://gist.github.com/lanhed/dcb652c83f032fea31c9)). Remember the output of this script.
 3. Open your Arduino editor and upload `read_NDEF_id.ino` to your Uno. Open the serial monitor and set it to 115200 baud. After a few seconds try scanning a tag, if you see the UID then your good. Log the UID of all tags you want to validate
-4. Open `config.py` and enter the first 6 digits of the UID of all valid tags, your OSx password, and your port from step 2
-5. Run `python NFC_Authenticator.py` and try scanning a tag - you should see some output confirming validation
-6. Try turning on your screensaver or locking your screen and scanning your tag, it should now work.
-7. Now just setup the program to run on login either through an Automation task or seperate script (I setup a directory and bash script for progs that run on login)
+4. Change the name of `EXAMPLEconfig.py` to just `config.py`
+5. Open `config.py` and enter the first 6 digits of the UID of all valid tags, your OSx password, and your port from step 2
+6. Run `python NFC_Authenticator.py` and try scanning a tag - you should see some output confirming validation
+7. Try turning on your screensaver or locking your screen and scanning your tag, it should now work.
+8. Now just setup the program to run on login either through an Automation task or seperate script (I setup a directory and bash script for progs that run on login)
